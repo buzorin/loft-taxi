@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "plugins": [
+    "cypress",
+    "react-perf"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "cypress/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "max-statements": ["error", 8],
+    "max-depth": ["error", 4],
+    "max-params": ["error", 3],
+    "react/destructuring-assignment": ["error", "always"],
+    "react/no-array-index-key": "error",
+    "react/jsx-no-bind": "error",
+    "react-perf/jsx-no-new-object-as-prop": "error",
+    "react-perf/jsx-no-new-array-as-prop": "error",
+    "no-var": "error",
+    "no-console": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let"], "next": "*"},
+      { "blankLine": "any", "prev": ["const", "let"], "next": ["const", "let"]},
+      { "blankLine": "always", "prev": ["if", "for", "while", "switch", "try"], "next": "*"},
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ]
+  }
+}
