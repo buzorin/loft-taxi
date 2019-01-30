@@ -63,6 +63,11 @@ class OrderTaxiForm extends Component {
 
     const { clearForm } = this.props;
 
+    this.setState({
+      from: null,
+      to: null
+    });
+
     clearForm();
   };
 

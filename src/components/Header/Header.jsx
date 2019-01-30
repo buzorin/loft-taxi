@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { doAuthLogout } from '../../modules/auth';
 
@@ -25,16 +25,16 @@ class Header extends Component {
           <Typography className={styles.title} variant="title" color="inherit">
             Loft Taxi
           </Typography>
-          <Button component={Link} to="/map">
+          <Button component={NavLink} to="/map">
             Карта
           </Button>
-          <Button component={Link} to="/profile">
+          <Button component={NavLink} to="/profile">
             Профиль
           </Button>
           {isLoggedIn ? (
             <Button onClick={this.handleClick}>Выйти</Button>
           ) : (
-            <Button component={Link} to="/login">
+            <Button component={NavLink} to="/login">
               Войти
             </Button>
           )}
