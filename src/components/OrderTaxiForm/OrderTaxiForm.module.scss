@@ -1,0 +1,16 @@
+.paper {
+  position: absolute;
+  top: 112px;
+  left: 20px;
+  width: 25%;
+  min-width: 400px;
+  padding: 24px;
+
+  @media (max-width: 450px) {
+    min-width: calc(100% - 40px);
+  }
+}
+
+.form > *:not(:last-child) {
+  margin-bottom: 24px;
+}
