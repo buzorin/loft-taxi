@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { getAddressList } from '../../api';
 
 import styles from './OrderTaxiForm.module.scss';
@@ -133,12 +134,39 @@ class OrderTaxiForm extends Component {
     );
   };
 
+  renderNeedProfile = () => {
+    return (
+      <div className={styles.form}>
+        <Typography variant="h4" color="inherit">
+          Заполните платежные данные
+        </Typography>
+        <Typography variant="body2" color="inherit">
+          Укажите информацию о банковской карте, чтобы сделать заказ.
+        </Typography>
+        <Button
+          component={Link}
+          to="/profile"
+          variant="outlined"
+          size="medium"
+          color="primary"
+        >
+          Перейти в профиль
+        </Button>
+      </div>
+    );
+  };
+
   render() {
     const { hasOrder } = this.props;
+    const hasProfile = localStorage.getItem('profile');
 
     return (
       <Paper className={styles.paper}>
-        {hasOrder ? this.renderOrderMade() : this.renderOrderForm()}
+        {hasOrder
+          ? this.renderOrderMade()
+          : hasProfile
+          ? this.renderOrderForm()
+          : this.renderNeedProfile()}
       </Paper>
     );
   }

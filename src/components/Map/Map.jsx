@@ -56,9 +56,7 @@ class Map extends PureComponent {
       this.map.addLayer(getRouteOpts(orderCoords));
       this.map.fitBounds(
         [orderCoords[0], orderCoords[orderCoords.length - 1]],
-        {
-          padding: { top: 164, right: 100, bottom: 100, left: 100 }
-        }
+        { padding: 100 }
       );
     }
   }

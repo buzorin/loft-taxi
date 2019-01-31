@@ -20,7 +20,7 @@ class Header extends Component {
     const { isLoggedIn } = this.props;
 
     return (
-      <AppBar position="fixed" color="inherit">
+      <AppBar position="relative" color="inherit">
         <Toolbar>
           <Typography className={styles.title} variant="title" color="inherit">
             Loft Taxi
