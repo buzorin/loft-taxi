@@ -3,7 +3,6 @@ import { handleActions } from 'redux-actions';
 import {
   fetchAuthRequest,
   fetchAuthSuccess,
-  fetchAuthUserDataError,
   fetchAuthFailure,
   doAuthLogout
 } from './actions';
@@ -12,7 +11,6 @@ const isLoading = handleActions(
   {
     [fetchAuthRequest]: () => true,
     [fetchAuthSuccess]: () => false,
-    [fetchAuthUserDataError]: () => false,
     [fetchAuthFailure]: () => false
   },
   false
@@ -29,7 +27,6 @@ const isLoggedIn = handleActions(
 const error = handleActions(
   {
     [fetchAuthRequest]: () => null,
-    [fetchAuthUserDataError]: (_store, { payload }) => payload,
     [fetchAuthFailure]: (_store, { payload }) => payload
   },
   null
