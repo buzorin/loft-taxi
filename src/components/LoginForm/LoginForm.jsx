@@ -124,7 +124,7 @@ class LoginForm extends Component {
   }
 }
 
-const mapStateToProps = state => state.auth;
+const mapStateToProps = ({ auth }) => auth;
 const mapDispatchToProps = {
   fetchAuthRequest
 };
